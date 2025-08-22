@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galería</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="galeria.css" />
+
+  </body>
+</head>
+
+<body>
+  <header class="galeria-header">
+    <a href="index.html" class="volver">← Volver</a>
+    <h1>Diseño Ux Ui</h1>
+  </header>
+  <!-- Contenedor -->
+  <div class="uxui-gallery uxui-grid">
+    <div class="uxui-item">
+      <img src="img/kidn_frame.png" alt="Proyecto 1" />
+      <p class="uxui-desc">
+    Proyecto de una app donde los niños puedan tener su cuento adaptado a las distintas necesidades: mayúsculas, minúsculas, pictogramas, audiolibro, etc. Promueve la inclusión en la literatura infantil.
+  </p>
+      <button class="verMasBtn" data-figma="https://www.figma.com/proto/4rdyLQIBtlo2bmyqxpnaEt/Untitled?page-id=14%3A47&node-id=119-3311&viewport=847%2C1902%2C0.34&t=CQz7FFZBHQEptvZr-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=119%3A3137">Ver más</button>
+    </div>
+    <div class="uxui-item">
+      <img src="img/Tickets.png" alt="Proyecto 2" />
+      <p class="uxui-desc">
+    Plataforma web para venta de tickets online. Solo se publican estas 3 pantallas debido a políticas de confidencialidad del lugar donde trabajo.
+  </p>
+      <button class="verMasBtn" data-figma="https://www.figma.com/proto/fUSoxZZCCLplOhIo8WhCU1/Portfolio?page-id=139%3A3418&node-id=139-3419&p=f&viewport=141%2C336%2C0.15&t=vHetKJrRPiwNF3Sl-1&scaling=scale-down&content-scaling=fixed">Ver más</button>
+    </div>
+    <div class="uxui-item">
+      <img src="img/Enco.png" alt="Proyecto 3" />
+      <p class="uxui-desc">
+    Proyecto de una app de cadetería enfocada en usabilidad y localización rápida de entregas.
+  </p>
+      <button class="verMasBtn"
+        data-figma="https://www.figma.com/proto/fUSoxZZCCLplOhIo8WhCU1/Portfolio?page-id=106%3A2735&node-id=106-3686&viewport=619%2C69%2C0.13&t=mApHh29Xu7LRJXAw-1&scaling=scale-down&content-scaling=fixed">Ver
+        más</button>
+    </div>
+    <div class="uxui-item">
+      <img src="img/Alarma.png" alt="Proyecto 4" />
+      <p class="uxui-desc">
+    Diseño de interfaz para sistema de alarmas: intuitivo, limpio y adaptado a múltiples dispositivos.
+  </p>
+      <button class="verMasBtn" data-figma="https://www.figma.com/proto/fUSoxZZCCLplOhIo8WhCU1/Portfolio?page-id=2%3A2&node-id=2-2813&viewport=1369%2C411%2C0.08&t=C6oUU6JSqO90CabE-1&scaling=scale-down&content-scaling=fixed">Ver más</button>
+    </div>
+  </div>
+
+<div id="figmaViewer" class="figma-modal" style="display: none;">
+  <div class="figma-content">
+    <div id="figmaLoader" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: sans-serif; font-size: 1.2rem;">
+  Cargando Figma...
+</div>
+<iframe allowfullscreen style="width: 100%; height: 80vh; border: none;" onload="ocultarLoader()"></iframe>
+
+    <span class="cerrar" onclick="cerrarFigma()" style="cursor:pointer;font-size:2rem;">×</span>
+    <iframe allowfullscreen style="width: 100%; height: 80vh; border: none;"></iframe>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const verMasBtns = document.querySelectorAll('.verMasBtn');
+    const figmaViewer = document.getElementById('figmaViewer');
+    const figmaIframe = figmaViewer.querySelector('iframe');
+    const figmaLoader = document.getElementById('figmaLoader');
+
+    verMasBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const link = btn.getAttribute('data-figma');
+        figmaLoader.style.display = 'block'; // mostrar loader
+        figmaIframe.style.display = 'none'; // ocultar iframe mientras carga
+        figmaIframe.src = `https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(link)}`;
+        figmaViewer.style.display = 'flex';
+      });
+    });
+
+    window.ocultarLoader = function () {
+      figmaLoader.style.display = 'none';
+      figmaIframe.style.display = 'block';
+    };
+
+    window.cerrarFigma = function () {
+      figmaViewer.style.display = 'none';
+      figmaIframe.src = '';
+      figmaLoader.style.display = 'block'; // por si se vuelve a abrir
+      figmaIframe.style.display = 'none';
+    };
+  });
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

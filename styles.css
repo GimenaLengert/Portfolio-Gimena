@@ -1,0 +1,374 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&family=Patrick+Hand&family=Short+Stack&display=swap');
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f2f2f2;
+    color: #2f2f2f;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+.navbar {
+    background-color: #f8f5f0;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2f2f2f;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #768a75;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px 60px;
+    background-color: #f8f5f0;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+    animation: fadeIn 1s ease-in;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+
+.hero h1 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Opcional: ajustar tamaño en pantallas pequeñas */
+@media (max-width: 600px) {
+    .hero h1 img {
+        padding: 0px 20px 60px;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+.titulos {
+    font-size: 64px;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.script {
+    font-family: "Klee One", cursive;
+    /*font-family: "Style Script", cursive;*/
+    color: #d57a8d;
+    font-size:18px;
+     font-weight: 600;
+  font-style: normal;
+    
+}
+/* divisiones*/
+
+
+
+.scroll-section {
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.scroll-wrapper {
+    display: flex;
+    animation: scrollLoop 20s linear infinite;
+}
+
+.scroll-text {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #333;
+    padding: 1rem 0;
+}
+
+.scroll-text .script {
+    font-family: "Style Script", cursive;
+    color: #d57a8d;
+    font-size: 1.6rem;
+    margin-right: 30px;
+}
+
+@keyframes scrollLoop {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* Flecha */
+.scroll-down span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-bottom: 2px solid #333;
+    border-right: 2px solid #333;
+    transform: rotate(45deg);
+    animation: bounce 1.5s ease-in-out 2 forwards;
+    opacity: 0.8;
+}
+
+/* Animación hacia abajo con desaparición */
+@keyframes bounce {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
+    }
+
+    30% {
+        transform: translateY(10px) rotate(45deg);
+        opacity: 1;
+    }
+
+    60% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(10px) rotate(45deg);
+        opacity: 0;
+        /* Esto la oculta completamente al final */
+    }
+}
+
+/*About*/
+.about {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 40px 80px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.about p {
+    flex: 2;
+    font-family: "Klee One", cursive;
+    margin: auto;
+    /* este es el truco */
+    font-size:18px;
+    line-height: 1.8;
+    max-width: 600px;
+     font-weight: 400;
+  font-style: normal;
+}
+
+
+.about img {
+    height: 100%;
+    object-fit: cover;
+    flex: 1;
+    max-width: 450px;
+    border-radius: 12px;
+
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    .about img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+}
+
+/* Servicios */
+.divbg {
+
+    background-color: #f8f5f0;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
+}
+
+.services,
+.contact {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    gap: 30px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+/* Tablet (2 columnas) */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+}
+
+/* Móvil (1 columna) */
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}
+.mt{margin-top: 0px;}
+
+.service-card {
+    background-color: #edece9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.service-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover .overlay {
+    opacity: 1;
+}
+
+.service-card .btn {
+    background-color: #ffffff;
+    color: #2f2f2f;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.service-card .btn:hover {
+    background-color: #ddd;
+}
+
+.service-card p {
+    margin-top: 12px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Contacto */
+
+.email-btn {
+    display: inline-block;
+    background-color: #768a75;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.email-btn:hover {
+    background-color: #5e705d;
+    transform: scale(1.05);
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    color: #999;
+    background-color: #f0ede7;
+}
