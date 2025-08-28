@@ -70,11 +70,24 @@
     const figmaIframe = figmaViewer.querySelector('iframe');
     const figmaLoader = document.getElementById('figmaLoader');
 
+    // 📱 Si es mobile, ocultamos el modal del DOM
+    if (window.innerWidth <= 768) {
+      figmaViewer.remove();
+    }
+
     verMasBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const link = btn.getAttribute('data-figma');
-        figmaLoader.style.display = 'block'; // mostrar loader
-        figmaIframe.style.display = 'none'; // ocultar iframe mientras carga
+
+        if (window.innerWidth <= 768) {
+          // En mobile, abrir en pestaña nueva
+          window.open(link, "_blank");
+          return;
+        }
+
+        // En desktop, abrir modal con loader + iframe
+        figmaLoader.style.display = 'block';
+        figmaIframe.style.display = 'none';
         figmaIframe.src = `https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(link)}`;
         figmaViewer.style.display = 'flex';
       });
@@ -88,11 +101,12 @@
     window.cerrarFigma = function () {
       figmaViewer.style.display = 'none';
       figmaIframe.src = '';
-      figmaLoader.style.display = 'block'; // por si se vuelve a abrir
+      figmaLoader.style.display = 'block';
       figmaIframe.style.display = 'none';
     };
   });
 </script>
+
 
 
 
