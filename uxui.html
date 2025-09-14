@@ -7,215 +7,122 @@
   <title>Galería</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="galeria.css" />
-
-  </body>
-  <style>
-    /* Reset y estilos base */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fafafa;
-    }
-
-    /* Header */
-    .header-portfolio {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem;
-      background: #333;
-      color: #fff;
-    }
-
-    .header-portfolio h1 {
-      margin: 0;
-      font-size: 1.5rem;
-    }
-
-    .btn-volver {
-      color: #fff;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    /* Grid de proyectos */
-    .proyectos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 1.5rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Cada tarjeta de proyecto */
-    .proyecto-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
-    }
-
-    .proyecto-card:hover {
-      transform: translateY(-5px);
-    }
-
-    /* Imagen clickeable */
-    .proyecto-card a {
-      display: block;
-      position: relative;
-    }
-
-    .proyecto-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .titleuxui{
-      width: 525px;
-    }
-
-    /* Overlay hover desktop */
-    .proyecto-card a::after {
-      content: "Ver más";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 1.2rem;
-    }
-
-    .proyecto-card a:hover::after {
-      opacity: 1;
-    }
-
-    /* Descripción del proyecto */
-    .proyecto-desc {
-      padding: 0.8rem;
-      font-size: 0.95rem;
-      color: #333;
-      line-height: 1.4;
-    }
-
-    /* Responsive: mobile */
-    @media (max-width: 768px) {
-      .proyectos-grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-      }
-
-      .proyecto-card a::after {
-        display: none; /* No overlay en mobile */
-      }
-      .titleuxui{
-      width: -webkit-fill-available;
-    }
-    }
-  </style>
 </head>
 
 <body>
   <header class="galeria-header">
     <a href="index.html" class="volver">← Volver</a>
-    <img src="img/uxuititle.png" alt="Proyecto 2" class="titleuxui">
+    <img src="img/uxuititle.png" alt="uxuititle" class="titleuxui">
   </header>
-   <!-- Grid de proyectos -->
-  <div class="proyectos-grid">
-    <div class="proyecto-card">
-      <a href="https://www.figma.com/proto/4rdyLQIBtlo2bmyqxpnaEt/Untitled?page-id=14%3A47&node-id=119-3311&viewport=847%2C1902%2C0.34&t=CQz7FFZBHQEptvZr-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=119%3A3137" target="_blank">
-        <img src="img/1.png" alt="Proyecto 1">
-      </a>
+
+  <main class="uxui-gallery-container">
+  <section class="uxui-gallery-grid">
+    <div class="uxui-gallery-item" data-video="videos/kind.mp4">
+      <img src="img/1.png" alt="Kind">
     </div>
 
-    <div class="proyecto-card">
-      <a href="https://www.figma.com/proto/fUSoxZZCCLplOhIo8WhCU1/Portfolio?page-id=2%3A2&node-id=2-2813&viewport=1369%2C411%2C0.08&t=C6oUU6JSqO90CabE-1&scaling=scale-down&content-scaling=fixed" target="_blank">
-        <img src="img/2.png" alt="Proyecto 2">
-      </a>
+    <div class="uxui-gallery-item" data-video="videos/alarma.mp4">
+      <img src="img/2.png" alt="Alartec">
     </div>
 
-    <div class="proyecto-card">
-      <a href="https://www.figma.com/proto/uVmGq3KoDbR00pwbbRrPXd/Wireframes-platzi?page-id=20%3A1106&node-id=107-4843&viewport=45%2C266%2C0.04&t=a3SpNF9r9m60vJpY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=34%3A1833&show-proto-sidebar=1" target="_blank">
-        <img src="img/3.png" alt="Proyecto 3">
-      </a>
+    <div class="uxui-gallery-item" data-video="videos/platzi.mp4">
+      <img src="img/3.png" alt="Platzi">
     </div>
 
-    <div class="proyecto-card">
-      <a href="https://www.figma.com/proto/fUSoxZZCCLplOhIo8WhCU1/Portfolio?page-id=106%3A2735&node-id=106-3686&viewport=619%2C69%2C0.13&t=mApHh29Xu7LRJXAw-1&scaling=scale-down&content-scaling=fixed" target="_blank">
-        <img src="img/4.png" alt="Proyecto 4">
-      </a>
+    <div class="uxui-gallery-item" data-video="videos/Enco.mp4">
+      <img src="img/4.png" alt="Enco">
     </div>
 
-    <div class="proyecto-card">
-      <a href="https://www.figma.com/proto/fUSoxZZCCLplOhIo8WhCU1/Portfolio?page-id=139%3A3418&node-id=139-3419&p=f&viewport=141%2C336%2C0.15&t=vHetKJrRPiwNF3Sl-1&scaling=scale-down&content-scaling=fixed" target="_blank">
-        <img src="img/5.png" alt="Proyecto 4">
-      </a>
+    <div class="uxui-gallery-item" data-video="videos/tickets.mp4">
+      <img src="img/5.png" alt="Tickets">
     </div>
 
-    <div class="proyecto-card">
-      <a href="https://www.figma.com/proto/fUSoxZZCCLplOhIo8WhCU1/Portfolio?node-id=178-3481&t=B1WLaV1FEzSLAk2W-1" target="_blank">
-        <img src="img/6.png" alt="Proyecto 4">
-      </a>
+    <div class="uxui-gallery-item" data-video="videos/armonIA.mp4">
+      <img src="img/6.png" alt="ArmonIA">
     </div>
+
+    <div class="uxui-gallery-item" data-video="videos/soul.mp4">
+      <img src="img/7.png" alt="Soul">
+    </div>
+
+    <div class="uxui-gallery-item" data-video="videos/menu.mp4">
+      <img src="img/8 (2).png" alt="Menu">
+    </div>
+  </section>
+</main>
+
+<!-- Modal video -->
+<div id="videoModal" class="video-modal" aria-hidden="true">
+  <div class="video-modal-content" role="dialog" aria-modal="true">
+    <button class="video-modal-close" aria-label="Cerrar">&times;</button>
+    <video id="modalVideo" playsinline webkit-playsinline preload="metadata" controls></video>
   </div>
+</div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const verMasBtns = document.querySelectorAll('.verMasBtn');
-    const figmaViewer = document.getElementById('figmaViewer');
-    const figmaIframe = figmaViewer.querySelector('iframe');
-    const figmaLoader = document.getElementById('figmaLoader');
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.uxui-gallery-item');
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('modalVideo');
+  const closeBtn = modal.querySelector('.video-modal-close');
 
-    // 📱 Si es mobile, ocultamos el modal del DOM
-    if (window.innerWidth <= 768) {
-      figmaViewer.remove();
-    }
+  // Abrir modal y reproducir
+  async function openModal(src) {
+    video.pause();
+    video.src = src;
+    video.load();
 
-    verMasBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const link = btn.getAttribute('data-figma');
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
 
-        if (window.innerWidth <= 768) {
-          // En mobile, abrir en pestaña nueva
-          window.open(link, "_blank");
-          return;
-        }
+    try {
+      // Intentar fullscreen si está disponible
+      if (video.requestFullscreen) await video.requestFullscreen();
+      else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+      else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+    } catch (e) { /* ignore */ }
 
-        // En desktop, abrir modal con loader + iframe
-        figmaLoader.style.display = 'block';
-        figmaIframe.style.display = 'none';
-        figmaIframe.src = `https://www.figma.com/embed?embed_host=share&url=${encodeURIComponent(link)}`;
-        figmaViewer.style.display = 'flex';
-      });
+    // Reproducir automáticamente
+    video.play().catch(err => console.warn("No se pudo reproducir:", err));
+  }
+
+  // Cerrar modal
+  async function closeModal() {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      if (document.webkitFullscreenElement) document.webkitExitFullscreen();
+    } catch (e) { /* ignore */ }
+
+    video.pause();
+    video.removeAttribute('src');
+    video.load();
+
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  }
+
+  // Evento clic en imagen
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      const src = item.dataset.video;
+      if (src) openModal(src);
     });
-
-    window.ocultarLoader = function () {
-      figmaLoader.style.display = 'none';
-      figmaIframe.style.display = 'block';
-    };
-
-    window.cerrarFigma = function () {
-      figmaViewer.style.display = 'none';
-      figmaIframe.src = '';
-      figmaLoader.style.display = 'block';
-      figmaIframe.style.display = 'none';
-    };
   });
+
+  // Botón cerrar
+  closeBtn.addEventListener('click', closeModal);
+
+  // Cerrar con click fuera del video
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+  });
+});
 </script>
-
-
-
-
-
 
 
 </body>
