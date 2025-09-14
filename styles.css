@@ -252,7 +252,7 @@ h2 {
     }
 
     .about img {
-       width: -webkit-fill-available;
+       width: 250px;
         height: auto;
         margin-top: 20px;
     }
